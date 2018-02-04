@@ -1,5 +1,7 @@
 package com.kuangxf.cloud.biz.member;
 
+import org.springframework.stereotype.Service;
+
 import com.kuangxf.cloud.biz.beans.member.MemberInfoQuery;
 import com.kuangxf.cloud.biz.common.PageResult;
 import com.kuangxf.cloud.biz.common.ServiceException;
@@ -9,6 +11,7 @@ import com.kuangxf.cloud.biz.common.ServiceException;
  * 
  *
  */
+@Service
 public interface IMemberService {
 
 	/**

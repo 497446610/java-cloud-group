@@ -114,8 +114,8 @@ public class AjaxResult implements Serializable {
 		return new AjaxResult(SUCCESS, msg);
 	}
 
-	public static AjaxResult success(Object data) {
-		return new AjaxResult(SUCCESS, "", data);
+	public static AjaxResult success(String msg,Object data) {
+		return new AjaxResult(SUCCESS, msg, data);
 	}
 
 	public static AjaxResult success(Object data, Long total, Long totalPage) {
