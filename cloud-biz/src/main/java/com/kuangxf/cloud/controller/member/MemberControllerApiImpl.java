@@ -1,21 +1,21 @@
-package com.kuangxf.cloud.api.member;
+package com.kuangxf.cloud.controller.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kuangxf.cloud.api.member.IMemberControllerApi;
 import com.kuangxf.cloud.biz.member.IMemberService;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
-@RequestMapping("member")
-public class MemberApiController implements IMemberApi {
+public class MemberControllerApiImpl implements IMemberControllerApi {
 
 	@Autowired
 	IMemberService memberService;
 
 	@Override
-	@RequestMapping(value="sayHello",method=RequestMethod.GET)
 	public String sayHello(String name) {
 		return memberService.sayHello(name);
 	}

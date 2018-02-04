@@ -18,7 +18,7 @@ public class Swagger2Config {
 	@Bean
 	public Docket createRestApi() {
 		return new Docket(DocumentationType.SWAGGER_2).groupName("member").apiInfo(apiInfo()).select()
-				.apis(RequestHandlerSelectors.basePackage("com.kuangxf.cloud.api"))
+				.apis(RequestHandlerSelectors.basePackage("com.kuangxf.cloud.controller"))
 				.paths(PathSelectors.any()).build();
 	}
 
