@@ -266,3 +266,5 @@ java.util.concurrent.TimeoutException: null
 },Server stats: [[Server:PC-20180202FXRO:8080;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
 ]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@363536c5 
 [PollingServerListUpdater-0] [34mINFO [0;39m [36mc.n.c.ChainedDynamicProperty[0;39m - Flipping property: cloud-biz.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647 
+[AsyncResolver-bootstrap-executor-0] [34mINFO [0;39m [36mc.n.d.s.r.a.ConfigClusterResolver[0;39m - Resolving eureka endpoints via configuration 
+[AsyncResolver-bootstrap-executor-0] [34mINFO [0;39m [36mc.n.d.s.r.a.ConfigClusterResolver[0;39m - Resolving eureka endpoints via configuration 
