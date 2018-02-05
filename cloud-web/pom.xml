@@ -93,18 +93,21 @@
 			</activation>
 			<properties>
 				<environment>dev</environment>
+				<logPath>d:/logs/cloud-web</logPath>
 			</properties>
 		</profile>
 		<profile>
 			<id>test</id>
 			<properties>
 				<environment>test</environment>
+				<logPath>d:/logs/cloud-web</logPath>
 			</properties>
 		</profile>
 		<profile>
 			<id>prod</id>
 			<properties>
 				<environment>prod</environment>
+				<logPath>d:/logs/cloud-web</logPath>
 			</properties>
 		</profile>
 	</profiles>
