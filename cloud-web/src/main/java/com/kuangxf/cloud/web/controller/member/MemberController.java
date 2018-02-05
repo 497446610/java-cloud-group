@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kuangxf.cloud.biz.beans.member.MemberInfoBean;
 import com.kuangxf.cloud.web.beans.member.Demo;
 import com.kuangxf.cloud.web.controller.AjaxResult;
 import com.kuangxf.cloud.web.feign.member.IMemberApi;
@@ -17,11 +18,9 @@ import com.kuangxf.cloud.web.feign.member.IMemberApi;
 public class MemberController {
 	private final static Logger logger = LoggerFactory.getLogger(MemberController.class);
 
-
-	
 	@Autowired
 	IMemberApi memberApi;
-	
+
 	/**
 	 * 数据验证demo
 	 * 
@@ -36,11 +35,20 @@ public class MemberController {
 		}
 		return AjaxResult.success("数据验证成功!");
 	}
-	
+
 	@RequestMapping("hello")
 	public AjaxResult hello(String name) {
 		String result = memberApi.sayHello(name);
-		return AjaxResult.success("调用服务成功!",result);
+		return AjaxResult.success("调用服务成功!", result);
+	}
+
+	@RequestMapping("addMember")
+	public AjaxResult addMember(String name) {
+		MemberInfoBean member = new MemberInfoBean();
+		member.setMemberId(1L);
+		member.setName(name);
+		String result = memberApi.addMember(member);
+		return AjaxResult.success("调用服务成功!", result);
 	}
 
 }

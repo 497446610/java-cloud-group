@@ -2,10 +2,14 @@ package com.kuangxf.cloud.biz.beans.member;
 
 import java.io.Serializable;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * 会员信息
  *
  */
+@ApiModel(description = "会员信息")
 public class MemberInfoBean implements Serializable {
 	/**
 	 * 
@@ -15,11 +19,13 @@ public class MemberInfoBean implements Serializable {
 	/**
 	 * 会员ID
 	 */
+	@ApiModelProperty(value = "会员ID")
 	private Long memberId;
 
 	/**
 	 * 会员名称
 	 */
+	@ApiModelProperty(value = "会员名称", required = true)
 	private String name;
 
 	public Long getMemberId() {
@@ -37,5 +43,12 @@ public class MemberInfoBean implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public String toString() {
+		return "MemberInfoBean [memberId=" + memberId + ", name=" + name + "]";
+	}
+	
+	
 
 }
