@@ -1,5 +1,7 @@
 package com.kuangxf.cloud.web.controller.member;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kuangxf.cloud.biz.beans.member.MemberInfoBean;
+import com.kuangxf.cloud.biz.beans.member.MemberInfoQuery;
 import com.kuangxf.cloud.web.beans.member.Demo;
 import com.kuangxf.cloud.web.controller.AjaxResult;
 import com.kuangxf.cloud.web.feign.member.IMemberApi;
@@ -48,6 +51,15 @@ public class MemberController {
 		member.setMemberId(1L);
 		member.setName(name);
 		String result = memberApi.addMember(member);
+		return AjaxResult.success("调用服务成功!", result);
+	}
+	
+	
+	@RequestMapping("listMember")
+	public AjaxResult listMember(String name) {
+		MemberInfoQuery member = new MemberInfoQuery();
+		member.setName(name);
+		List<MemberInfoBean> result = memberApi.list(member);
 		return AjaxResult.success("调用服务成功!", result);
 	}
 

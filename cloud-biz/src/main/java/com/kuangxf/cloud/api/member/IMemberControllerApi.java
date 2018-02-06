@@ -1,11 +1,14 @@
 package com.kuangxf.cloud.api.member;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kuangxf.cloud.biz.beans.member.MemberInfoBean;
+import com.kuangxf.cloud.biz.beans.member.MemberInfoQuery;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -21,7 +24,11 @@ public interface IMemberControllerApi {
 	public String sayHello(@RequestParam("name") String name);
 
 	@ApiOperation(value = "添加会员", notes = "hello world") //
-	@RequestMapping(value = "addMember", method = RequestMethod.POST,consumes = "application/json")
+	@RequestMapping(value = "addMember", method = RequestMethod.POST, consumes = "application/json")
 	public String addMember(@RequestBody MemberInfoBean memberInfo);
+
+	@ApiOperation(value = "查询会员", notes = "条件查询会员") //
+	@RequestMapping(value = "list", method = RequestMethod.POST, consumes = "application/json")
+	public List<MemberInfoBean> list(@RequestBody MemberInfoQuery query);
 
 }
