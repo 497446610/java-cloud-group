@@ -21,16 +21,14 @@ import org.mybatis.generator.exception.XMLParserException;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
 /**
- * Class description goes here.
  *
  * @version 1.0 2018年2月7日
- * @author Administrator
+ * @author kuangxf
  * @history
  * 
  */
 public class StartUp {
 	public static void main(String[] args) throws URISyntaxException {
-
 		try {
 			List<String> warnings = new ArrayList<String>();
 			boolean overwrite = true;
@@ -38,7 +36,7 @@ public class StartUp {
 			InputStream is = classloader.getResourceAsStream("generatorConfig.xml");
 			ConfigurationParser cp = new ConfigurationParser(warnings);
 			Configuration config = cp.parseConfiguration(is);
-			DefaultShellCallback callback = new DefaultShellCallback(overwrite);
+			DefaultShellCallback callback = new MyShellCallback(overwrite);
 			MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
 			myBatisGenerator.generate(null);
 		} catch (IOException | XMLParserException | InvalidConfigurationException | SQLException
