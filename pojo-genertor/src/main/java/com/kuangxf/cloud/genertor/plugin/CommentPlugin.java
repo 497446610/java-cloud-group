@@ -49,10 +49,8 @@ public class CommentPlugin extends PluginAdapter {
 		StringBuffer sb = new StringBuffer();
 		field.addJavaDocLine("/**");
 		if (introspectedColumn.getRemarks() != null)
-			field.addJavaDocLine(" * " + introspectedColumn.getRemarks());
+			field.addJavaDocLine(" * " + introspectedColumn.getRemarks() + "<br/>");
 		sb.append(" * 字段名 : ");
-		sb.append(introspectedTable.getFullyQualifiedTable());
-		sb.append('.');
 		sb.append(introspectedColumn.getActualColumnName());
 		field.addJavaDocLine(sb.toString());
 		// addJavadocTag(field, false);
@@ -69,8 +67,6 @@ public class CommentPlugin extends PluginAdapter {
 		method.addJavaDocLine("/**"); //$NON-NLS-1$
 
 		sb.append(" * 字段映射: "); //$NON-NLS-1$
-		sb.append(introspectedTable.getFullyQualifiedTable());
-		sb.append('.');
 		sb.append(introspectedColumn.getActualColumnName());
 		method.addJavaDocLine(sb.toString());
 
@@ -96,8 +92,6 @@ public class CommentPlugin extends PluginAdapter {
 		method.addJavaDocLine("/**"); //$NON-NLS-1$
 
 		sb.append(" * 字段映射: "); //$NON-NLS-1$
-		sb.append(introspectedTable.getFullyQualifiedTable());
-		sb.append('.');
 		sb.append(introspectedColumn.getActualColumnName());
 		method.addJavaDocLine(sb.toString());
 

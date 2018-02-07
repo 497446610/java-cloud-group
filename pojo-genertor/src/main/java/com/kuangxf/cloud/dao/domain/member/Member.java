@@ -11,37 +11,37 @@ import java.util.Date;
  */
 public class Member {
     /**
-     * 会员ID
-     * 字段名 : member.member_id
+     * 会员ID<br/>
+     * 字段名 : member_id
      */
     private Long memberId;
 
     /**
-     * 会员名称
-     * 字段名 : member.member_name
+     * 会员名称<br/>
+     * 字段名 : member_name
      */
     private String memberName;
 
     /**
-     * 性别
-     * 字段名 : member.sex
+     * 性别<br/>
+     * 字段名 : sex
      */
     private String sex;
 
     /**
-     * 生日
-     * 字段名 : member.birthday
+     * 生日<br/>
+     * 字段名 : birthday
      */
     private Date birthday;
 
     /**
-     * 创建时间
-     * 字段名 : member.create_time
+     * 创建时间<br/>
+     * 字段名 : create_time
      */
     private Date createTime;
 
     /**
-     * 字段映射: member.member_id
+     * 字段映射: member_id
      *
      * @return  会员ID
      */
@@ -50,7 +50,7 @@ public class Member {
     }
 
     /**
-     * 字段映射: member.member_id
+     * 字段映射: member_id
      *
      * @param memberId  会员ID
      */
@@ -59,7 +59,7 @@ public class Member {
     }
 
     /**
-     * 字段映射: member.member_name
+     * 字段映射: member_name
      *
      * @return  会员名称
      */
@@ -68,7 +68,7 @@ public class Member {
     }
 
     /**
-     * 字段映射: member.member_name
+     * 字段映射: member_name
      *
      * @param memberName  会员名称
      */
@@ -77,7 +77,7 @@ public class Member {
     }
 
     /**
-     * 字段映射: member.sex
+     * 字段映射: sex
      *
      * @return  性别
      */
@@ -86,7 +86,7 @@ public class Member {
     }
 
     /**
-     * 字段映射: member.sex
+     * 字段映射: sex
      *
      * @param sex  性别
      */
@@ -95,7 +95,7 @@ public class Member {
     }
 
     /**
-     * 字段映射: member.birthday
+     * 字段映射: birthday
      *
      * @return  生日
      */
@@ -104,7 +104,7 @@ public class Member {
     }
 
     /**
-     * 字段映射: member.birthday
+     * 字段映射: birthday
      *
      * @param birthday  生日
      */
@@ -113,7 +113,7 @@ public class Member {
     }
 
     /**
-     * 字段映射: member.create_time
+     * 字段映射: create_time
      *
      * @return  创建时间
      */
@@ -122,7 +122,7 @@ public class Member {
     }
 
     /**
-     * 字段映射: member.create_time
+     * 字段映射: create_time
      *
      * @param createTime  创建时间
      */
