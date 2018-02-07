@@ -7,6 +7,7 @@
 package com.kuangxf.cloud.genertor.plugin;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -134,10 +135,22 @@ public class CommentPlugin extends PluginAdapter {
 		try {
 			JDBCConnectionConfiguration jdbcConnectionConfiguration = this.context.getJdbcConnectionConfiguration();
 			Connection connection = new JDBCConnectionFactory(jdbcConnectionConfiguration).getConnection();
-			ResultSet rs = connection.getMetaData().getTables(table.getIntrospectedCatalog(),
-					table.getIntrospectedSchema(), table.getIntrospectedTableName(), (String[]) null);
+			/*
+			 * ResultSet rs =
+			 * connection.getMetaData().getTables(table.getIntrospectedCatalog(),
+			 * table.getIntrospectedSchema(), table.getIntrospectedTableName(), (String[])
+			 * null);
+			 */
+
+			PreparedStatement ps = connection.prepareStatement("show table status where name=?");
+			ps.setString(1, table.getIntrospectedTableName());
+			ResultSet rs = ps.executeQuery();
+
 			if (null != rs && rs.next()) {
-				remarks = rs.getString("REMARKS");
+				remarks = rs.getString("Comment");
+				if (remarks != null && remarks.length() > 0) {
+					remarks = remarks + " <br/>";
+				}
 			}
 
 			this.closeConnection(connection, rs);
@@ -148,7 +161,7 @@ public class CommentPlugin extends PluginAdapter {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		topLevelClass.addJavaDocLine("/**");
 		topLevelClass.addJavaDocLine(" * " + remarks);
-		topLevelClass.addJavaDocLine(" *");
+		topLevelClass.addJavaDocLine(" * table: " + introspectedTable.getFullyQualifiedTable());
 		topLevelClass.addJavaDocLine(" * @author " + author);
 		topLevelClass.addJavaDocLine(" * @date " + format.format(new Date()));
 		topLevelClass.addJavaDocLine(" *");
