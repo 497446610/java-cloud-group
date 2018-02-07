@@ -25,7 +25,7 @@ public class BaseService {
 		return page;
 	}
 
-	public <T> PageResult<T> pageList2PageResult(Class<T> clazz, List rows, Page page) {
+	public <T> PageResult<T> trans2PageResult(Class<T> clazz, List rows, Page page) {
 		PageResult<T> result = new PageResult<T>();
 		result.setRows(new ArrayList<T>());
 		result.setPageIndex(page.getCurrPage());

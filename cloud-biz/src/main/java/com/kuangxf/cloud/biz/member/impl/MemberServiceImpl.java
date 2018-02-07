@@ -34,7 +34,7 @@ public class MemberServiceImpl extends BaseService implements IMemberService {
 		} catch (Exception e) {
 			logger.error("查询会员信息失败", e);
 		}
-		return pageList2PageResult(MemberBean.class, list, page);
+		return trans2PageResult(MemberBean.class, list, page);
 	}
 
 	@Override
