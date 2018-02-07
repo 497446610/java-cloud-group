@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" > 
+<generatorConfiguration>
+	<context id="context1" targetRuntime="MyBatis3">
+		<property name="javaFileEncoding" value="UTF-8" />
+		<commentGenerator type="com.kuangxf.cloud.genertor.MyCommentGenerator">
+		</commentGenerator> 
+
+		<jdbcConnection connectionURL="jdbc:mysql://192.168.0.154/test"
+			driverClass="com.mysql.jdbc.Driver" password="123456" userId="kxf" />
+
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.kuangxf.cloud.dao.domain.member"
+			targetProject="pojo-genertor">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="mapper" targetProject="pojo-genertor">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.kuangxf.cloud.dao.mapper.member" targetProject="pojo-genertor">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+
+		<table schema="" tableName="member" domainObjectName="Member"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+		</table>
+
+	</context>
+</generatorConfiguration>
