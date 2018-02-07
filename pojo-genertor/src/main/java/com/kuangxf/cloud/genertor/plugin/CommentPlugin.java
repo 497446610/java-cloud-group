@@ -27,10 +27,10 @@ import org.mybatis.generator.config.JDBCConnectionConfiguration;
 import org.mybatis.generator.internal.JDBCConnectionFactory;
 
 /**
- * Class description goes here.
+ * 备注插件.
  *
  * @version 1.0 2018年2月7日
- * @author Administrator
+ * @author kuangxf
  * @history
  * 
  */

@@ -3,8 +3,8 @@ package com.kuangxf.cloud.dao.domain.member;
 import java.util.Date;
 
 /**
- * 
- *
+ * 会员信息 <br/>
+ * table: member
  * @author kuangxf
  * @date 2018-02-07
  *
