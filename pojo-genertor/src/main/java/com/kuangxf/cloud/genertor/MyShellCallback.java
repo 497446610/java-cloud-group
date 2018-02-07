@@ -33,15 +33,21 @@ public class MyShellCallback extends DefaultShellCallback {
 
 	@Override
 	public File getDirectory(String targetProject, String targetPackage) throws ShellException {
-		File project = new File(targetProject);
-		if (!project.isDirectory()) {// 非全目录则认为配置的是工程名称
+		/*File project = new File(targetProject);
+		if (!project.isDirectory() || !project.exists()) {// 非全目录则认为配置的是工程名称
 			String path = this.getClass().getResource("/").getPath();
 			int index = path.indexOf(targetProject);
 			path = path.substring(0, index);
 			path = path + targetProject + "/src/main/";
 			project = new File(path);
-		}
+		}*/
 
+		String path = this.getClass().getResource("/").getPath();
+		int index = path.indexOf(targetProject);
+		path = path.substring(0, index);
+		path = path + targetProject + "/src/main/java/";
+		File project = new File(path);
+		
 		if (!project.isDirectory()) {
 			throw new ShellException(getString("Warning.9", //$NON-NLS-1$
 					targetProject));
