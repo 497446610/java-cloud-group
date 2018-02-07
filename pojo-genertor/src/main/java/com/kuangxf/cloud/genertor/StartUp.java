@@ -36,7 +36,7 @@ public class StartUp {
 			InputStream is = classloader.getResourceAsStream("generatorConfig.xml");
 			ConfigurationParser cp = new ConfigurationParser(warnings);
 			Configuration config = cp.parseConfiguration(is);
-			DefaultShellCallback callback = new MyShellCallback(overwrite);
+			DefaultShellCallback callback = new DefaultShellCallback(overwrite);
 			MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
 			myBatisGenerator.generate(null);
 		} catch (IOException | XMLParserException | InvalidConfigurationException | SQLException
