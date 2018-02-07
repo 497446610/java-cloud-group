@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.kuangxf.cloud.biz.beans.member.MemberInfoBean;
-import com.kuangxf.cloud.biz.beans.member.MemberInfoQuery;
+import com.kuangxf.cloud.biz.beans.member.MemberBean;
+import com.kuangxf.cloud.biz.beans.member.MemberQuery;
 
 @FeignClient(value = "cloud-biz")
 @RequestMapping("member")
@@ -19,10 +19,10 @@ public interface IMemberApi {
 	public String sayHello(@RequestParam("name") String name);
 	
 	@RequestMapping(value = "addMember", method = RequestMethod.POST,consumes = "application/json")
-	public String addMember(@RequestBody MemberInfoBean memberInfo);
+	public String addMember(@RequestBody MemberBean memberInfo);
 	
 	@RequestMapping(value = "list", method = RequestMethod.POST, consumes = "application/json")
-	public List<MemberInfoBean> list(@RequestBody MemberInfoQuery query);
+	public List<MemberBean> list(@RequestBody MemberQuery query);
 
 
 }

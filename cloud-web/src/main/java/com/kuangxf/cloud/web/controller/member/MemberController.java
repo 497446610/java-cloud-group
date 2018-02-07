@@ -11,8 +11,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kuangxf.cloud.biz.beans.member.MemberInfoBean;
-import com.kuangxf.cloud.biz.beans.member.MemberInfoQuery;
+import com.kuangxf.cloud.biz.beans.member.MemberBean;
+import com.kuangxf.cloud.biz.beans.member.MemberQuery;
 import com.kuangxf.cloud.web.beans.member.Demo;
 import com.kuangxf.cloud.web.controller.AjaxResult;
 import com.kuangxf.cloud.web.feign.member.IMemberApi;
@@ -47,9 +47,9 @@ public class MemberController {
 
 	@RequestMapping("addMember")
 	public AjaxResult addMember(String name) {
-		MemberInfoBean member = new MemberInfoBean();
+		MemberBean member = new MemberBean();
 		member.setMemberId(1L);
-		member.setName(name);
+		member.setMemberName(name);
 		String result = memberApi.addMember(member);
 		return AjaxResult.success("调用服务成功!", result);
 	}
@@ -57,9 +57,9 @@ public class MemberController {
 	
 	@RequestMapping("listMember")
 	public AjaxResult listMember(String name) {
-		MemberInfoQuery member = new MemberInfoQuery();
+		MemberQuery member = new MemberQuery();
 		member.setName(name);
-		List<MemberInfoBean> result = memberApi.list(member);
+		List<MemberBean> result = memberApi.list(member);
 		return AjaxResult.success("调用服务成功!", result);
 	}
 

@@ -8,7 +8,7 @@ import com.kuangxf.cloud.biz.common.PageParam;
  * 会员信息查询条件
  *
  */
-public class MemberInfoQuery extends PageParam implements Serializable {
+public class MemberQuery extends PageParam implements Serializable {
 	/**
 	 * 
 	 */
@@ -27,4 +27,10 @@ public class MemberInfoQuery extends PageParam implements Serializable {
 		this.name = name;
 	}
 
+	@Override
+	public String toString() {
+		return "MemberQuery [name=" + name + "]";
+	}
+
+	
 }

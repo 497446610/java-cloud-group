@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import com.kuangxf.cloud.biz.common.PageParam;
 import com.kuangxf.cloud.biz.common.PageResult;
+import com.kuangxf.cloud.dao.common.Page;
 //import com.kuangxf.cloud.dao.common.Page;
 
 @SuppressWarnings({ "rawtypes" })
@@ -19,7 +20,7 @@ public class BaseService {
 	 */
 	private final static Logger logger = LoggerFactory.getLogger(BaseService.class);
 
-	/*public Page query2Page(PageParam pageParam) {
+	public Page query2Page(PageParam pageParam) {
 		Page page = new Page(pageParam.getPageIndex(), pageParam.getPageSize());
 		return page;
 	}
@@ -41,7 +42,7 @@ public class BaseService {
 		result.setTotal(page.getTotalPages());
 		return result;
 	}
-*/
+
 	public void copyProperties(Object dest, Object source) {
 		if (dest == null || source == null) {
 			return;

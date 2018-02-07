@@ -8,9 +8,7 @@
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.kuangxf.cloud</groupId>
 	<artifactId>cloud-eureka</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>cloud-eureka</name>
 	<url>http://maven.apache.org</url>
 	<properties>
