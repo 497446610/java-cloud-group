@@ -4,8 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kuangxf.cloud.api.member.IMemberControllerApi;
@@ -33,9 +31,9 @@ public class MemberControllerApiImpl implements IMemberControllerApi {
 	}
 
 	@Override
-	public PageResult list(@RequestBody MemberQuery query) {
+	public PageResult<MemberBean> list(@RequestBody MemberQuery query) {
 		logger.info("查询条件{}", query.toString());
-		PageResult result = memberService.queryMember(query);
+		PageResult<MemberBean> result = memberService.queryMember(query);
 		return result;
 	}
 

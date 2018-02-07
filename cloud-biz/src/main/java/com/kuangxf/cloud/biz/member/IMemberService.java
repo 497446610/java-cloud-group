@@ -2,6 +2,7 @@ package com.kuangxf.cloud.biz.member;
 
 import org.springframework.stereotype.Service;
 
+import com.kuangxf.cloud.biz.beans.member.MemberBean;
 import com.kuangxf.cloud.biz.beans.member.MemberQuery;
 import com.kuangxf.cloud.biz.common.PageResult;
 import com.kuangxf.cloud.biz.common.ServiceException;
@@ -21,7 +22,7 @@ public interface IMemberService {
 	 * @return
 	 * @throws ServiceException
 	 */
-	public PageResult queryMember(MemberQuery query) throws ServiceException;
+	public PageResult<MemberBean> queryMember(MemberQuery query) throws ServiceException;
 
 	/**
 	 * 逻辑删除会员

@@ -3,8 +3,7 @@ package com.kuangxf.cloud.biz.common;
 import java.io.Serializable;
 import java.util.List;
 
-@SuppressWarnings({ "rawtypes" })
-public class PageResult extends PageParam  implements Serializable{
+public class PageResult<T> extends PageParam implements Serializable {
 	/**
 	 * 
 	 */
@@ -19,7 +18,7 @@ public class PageResult extends PageParam  implements Serializable{
 	 * 数据列表
 	 */
 
-	private List rows;
+	private List<T> rows;
 
 	public long getTotal() {
 		return total;
@@ -29,11 +28,11 @@ public class PageResult extends PageParam  implements Serializable{
 		this.total = total;
 	}
 
-	public List getRows() {
+	public List<T> getRows() {
 		return rows;
 	}
 
-	public void setRows(List rows) {
+	public void setRows(List<T> rows) {
 		this.rows = rows;
 	}
 
