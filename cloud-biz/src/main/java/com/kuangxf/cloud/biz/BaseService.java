@@ -71,4 +71,22 @@ public class BaseService {
 		}
 	}
 
+	public <T> T trans2Bean(Class<T> clazz, Object source) {
+		T dest = null;
+		try {
+			dest = clazz.newInstance();
+		} catch (InstantiationException | IllegalAccessException e1) {
+			e1.printStackTrace();
+		}
+		if (source == null) {
+			return dest;
+		}
+
+		try {
+			BeanUtils.copyProperties(dest, source);
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+		}
+		return dest;
+	}
 }
