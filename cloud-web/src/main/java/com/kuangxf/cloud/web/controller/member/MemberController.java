@@ -1,11 +1,7 @@
 package com.kuangxf.cloud.web.controller.member;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,13 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kuangxf.cloud.biz.beans.member.MemberBean;
 import com.kuangxf.cloud.biz.beans.member.MemberQuery;
+import com.kuangxf.cloud.biz.common.PageResult;
 import com.kuangxf.cloud.web.beans.member.Demo;
 import com.kuangxf.cloud.web.controller.AjaxResult;
 import com.kuangxf.cloud.web.feign.member.IMemberApi;
 
 @RestController
 public class MemberController {
-	private final static Logger logger = LoggerFactory.getLogger(MemberController.class);
+	//private final static Logger logger = LoggerFactory.getLogger(MemberController.class);
 
 	@Autowired
 	IMemberApi memberApi;
@@ -59,8 +56,8 @@ public class MemberController {
 	public AjaxResult listMember(String name) {
 		MemberQuery member = new MemberQuery();
 		member.setName(name);
-		List<MemberBean> result = memberApi.list(member);
-		return AjaxResult.success("调用服务成功!", result);
+		PageResult<MemberBean> result = memberApi.list(member);
+		return AjaxResult.success(result);
 	}
 
 }

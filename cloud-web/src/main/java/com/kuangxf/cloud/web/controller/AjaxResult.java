@@ -15,6 +15,7 @@ import com.kuangxf.cloud.biz.common.PageResult;
  * @author 况小锋
  * @version 1.0
  */
+@SuppressWarnings("rawtypes")
 public class AjaxResult implements Serializable {
 	private static final long serialVersionUID = 1L;
 

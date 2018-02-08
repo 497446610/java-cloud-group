@@ -28,6 +28,6 @@ public interface IMemberControllerApi {
 
 	@ApiOperation(value = "查询会员", notes = "条件查询会员") //
 	@RequestMapping(value = "list", method = RequestMethod.POST, consumes = "application/json")
-	public PageResult list(@RequestBody MemberQuery query);
+	public PageResult<MemberBean> list(@RequestBody MemberQuery query);
 
 }

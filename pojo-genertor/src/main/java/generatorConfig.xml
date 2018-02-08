@@ -18,8 +18,8 @@
 
 		
 
-		<jdbcConnection connectionURL="jdbc:mysql://192.168.0.154/test"
-			driverClass="com.mysql.jdbc.Driver" password="123456" userId="kxf" />
+		<jdbcConnection connectionURL="jdbc:mysql://localhost/test"
+			driverClass="com.mysql.jdbc.Driver" password="123456" userId="data" />
 
 
 		<javaTypeResolver>
