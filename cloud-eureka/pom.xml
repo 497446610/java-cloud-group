@@ -57,7 +57,7 @@
 			<id>test</id>
 			<properties>
 				<environment>test</environment>
-				<logPath>d:/logs/cloud-eurka</logPath>
+				<logPath>/app/logs</logPath>
 			</properties>
 		</profile>
 		<profile>
