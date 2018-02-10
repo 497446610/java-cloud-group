@@ -22,7 +22,6 @@
 		<module>cloud-eureka</module>
 		<module>cloud-web</module>
 		<module>example-swagger</module>
-		<module>cloud-eureka</module>
 		<module>pojo-genertor</module>
 	</modules>
 
@@ -30,36 +29,21 @@
 		<jdk.version>1.8</jdk.version>
 	</properties>
 
-
 	<dependencyManagement>
-		<dependency>
-			<groupId>org.mybatis.generator</groupId>
-			<artifactId>mybatis-generator-core</artifactId>
-			<version>1.3.6</version>
-		</dependency>
+		<dependencies>
+			<dependency>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-core</artifactId>
+				<version>1.3.6</version>
+			</dependency>
 
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.9</version>
-		</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.9</version>
+			</dependency>
+		</dependencies>
 	</dependencyManagement>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>${jdk.version}</source>
-					<target>${jdk.version}</target>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-
-		</plugins>
-	</build>
 
 	<profiles>
 		<profile>
@@ -74,5 +58,6 @@
 			</properties>
 		</profile>
 	</profiles>
+
 
 </project>
