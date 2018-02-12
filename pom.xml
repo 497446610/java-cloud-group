@@ -23,6 +23,7 @@
 		<module>cloud-web</module>
 		<module>example-swagger</module>
 		<module>pojo-genertor</module>
+		<module>kafka-demo</module>
 	</modules>
 
 	<properties>
