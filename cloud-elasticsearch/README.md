@@ -1,0 +1,3 @@
+注意spring-boot-starter-data-elasticsearch和elasticsearch版本的问题，
+如果版本不匹配将无法连接elasticsearch
+此工程需要安装elasticsearch2.4.6版本
